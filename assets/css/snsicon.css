@@ -1,0 +1,32 @@
+@font-face {
+  font-family: 'snsIcon';
+  src:  url('../snsicon-fonts/snsIcon.eot?7oqn4z');
+  src:  url('../snsicon-fonts/snsIcon.eot?7oqn4z#iefix') format('embedded-opentype'),
+    url('../snsicon-fonts/snsIcon.ttf?7oqn4z') format('truetype'),
+    url('../snsicon-fonts/snsIcon.woff?7oqn4z') format('woff'),
+    url('../snsicon-fonts/snsIcon.svg?7oqn4z#snsIcon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="sns-"], [class*=" sns-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'snsIcon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sns-misskey:before {
+  content: "\e900";
+}
+.sns-twitter:before {
+  content: "\ea96";
+}

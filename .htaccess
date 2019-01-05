@@ -1,0 +1,35 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} ^www\.eroico\.ml
+RewriteRule (.*) https://eroico.ml/$1 [R=301,L]
+RewriteRule ^player/nv([a-zA-Z0-9-]+)$ player/index.php?id=$1
+RewriteRule ^player/nv([a-zA-Z0-9-]+)/$ player/index.php?id=$1
+
+RewriteRule ^videos/watch/nv([a-zA-Z0-9-]+)$ videos/index.php?watch=$1
+RewriteRule ^videos/watch/nv([a-zA-Z0-9-]+)/$ videos/index.php?watch=$1
+RewriteRule ^videos/tag/(.*?)$ videos/index.php?tag=$1
+RewriteRule ^videos/tag/(.*?)/$ videos/index.php?tag=$1
+RewriteRule ^videos/site/([a-zA-Z0-9-_]+)$ videos/site/index.php?site=$1
+RewriteRule ^videos/site/([a-zA-Z0-9-_]+)/$ videos/site/index.php?site=$1
+RewriteRule ^videos/actress/([0-9]+)$ videos/index.php?actress=$1
+RewriteRule ^videos/actress/([0-9]+)/$ videos/index.php?actress=$1
+
+RewriteRule ^@([a-zA-Z0-9_]+)$ user/index.php?userid=$1
+RewriteRule ^@([a-zA-Z0-9_]+)/$ user/index.php?userid=$1
+
+RewriteRule ^assets/img/avatar/([a-zA-Z0-9_]+)$ assets/img/avatar.php?id=$1
+RewriteRule ^assets/img/avatar/([a-zA-Z0-9_]+)/$ assets/img/avatar.php?id=$1
+RewriteRule ^assets/img/thumbnail/([a-zA-Z0-9_]+)$ assets/img/thumbnail.php?id=$1
+RewriteRule ^assets/img/thumbnail/([a-zA-Z0-9_]+)/$ assets/img/thumbnail.php?id=$1
+
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/gif "access plus 1 months"
+ExpiresByType image/jpeg "access plus 1 months"
+ExpiresByType image/png "access plus 1 months"
+ExpiresByType image/x-icon "access plus 6 months"
+ExpiresByType text/css "access plus 1 months"
+ExpiresByType text/javascript "access plus 1 months"
+ExpiresByType application/javascript "access plus 1 months"
+ExpiresByType application/x-javascript "access plus 1 months"
+</IfModule>
